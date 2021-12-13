@@ -1,0 +1,259 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #000;
+}
+
+canvas{
+  display: inline-block;
+  position:absolute;
+  top:50px;
+  right: 100px;
+  border-radius: 50%;
+  /* filter:blur(2px);  */
+}
+
+
+.conversation{
+    width: 40%;
+    height: 100%;
+    /* border: 1px solid red; */
+    padding-left: 20px;
+    position:absolute;
+    left: 0;
+}
+
+
+.title{
+    height: 50px;
+    text-align: center;
+    font-size: 30px;
+    background-color: #fff;
+    padding-top: 20px;
+    margin: 10px 0;
+    margin-top:20px;
+    font-weight:300;
+    color: #000;
+}
+
+.title.modify{
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.imessage {
+    background-color: #fff;
+    border: 1px solid #e5e5ea;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    font-family: "SanFrancisco";
+    font-size: 1.25rem;
+    margin: 0 auto 1rem;
+    max-width: 600px;
+    padding: 0.5rem 1.5rem;
+    height: 350px;
+    overflow:hidden;
+  }
+ 
+  .imessage li {
+    font-family: 'Raleway', sans-serif;
+    list-style-type: none;
+    border-radius: 1.15rem;
+    line-height: 1.25;
+    max-width: 100%;
+    padding: 0.5rem .875rem;
+    position: relative;
+    /* word-wrap: break-word; */
+    display: inline-block;
+  }
+  
+  .imessage li::before,
+  .imessage li::after {
+    bottom: -0.1rem;
+    content: "";
+    height: 1rem;
+    position: absolute;
+  }
+
+  li.fromA {
+    align-self: flex-end;
+    background-color: #248bf5;
+    /* background-color: #000; */
+    color: #fff; 
+  }
+  
+  li.fromA::before {
+    border-bottom-left-radius: 0.8rem 0.7rem;
+    border-right: 1rem solid #248bf5;
+    right: -0.35rem;
+    transform: translate(0, -0.1rem);
+  }
+  
+  li.fromA::after {
+    background-color: #fff;
+    border-bottom-left-radius: 0.5rem;
+    right: -40px;
+    transform:translate(-30px, -2px);
+    width: 10px;
+  }
+  
+  li[class^="from"] {
+    margin: 0.5rem 0;
+    width: fit-content;
+  }
+  
+  li.fromA ~ li.fromA {
+    margin: 0.25rem 0 0;
+  }
+  
+  li.fromA ~ li.fromA:not(:last-child) {
+    margin: 0.25rem 0 0;
+  }
+  
+  li.fromA ~ li.fromA:last-child {
+    margin-bottom: 0.5rem;
+  }
+
+
+
+  li.fromB {
+    align-items: flex-start;
+    background-color: #e5e5ea;
+    color: #000;
+  }
+  
+  li.fromB::before {
+    border-bottom-right-radius: 0.8rem 0.7rem;
+    border-left: 1rem solid #e5e5ea;
+    left: -0.35rem;
+    transform: translate(0, -0.1rem);
+  }
+  
+  li.fromB::after {
+    background-color: #fff;
+    border-bottom-right-radius: 0.5rem;
+    left: 20px;
+    transform: translate(-30px, -2px);
+    width: 10px;
+  }
+  .imessage.modify{
+    background-color: rgba(0, 0, 0, 0.5);
+    border:0px;
+  }
+  .imessage.modify li.fromB::before{
+    opacity: 0;
+  }
+  .imessage.modify li.fromB::after{
+    opacity: 0;
+  }
+  .imessage.modify li.fromA::before{
+    opacity: 0;
+  }
+  .imessage.modify li.fromA::after{
+    opacity: 0;
+  }
+
+ 
+.answer{
+  padding: 0.7rem 1.5rem;
+  border:2px solid #e5e5ea;
+  border-radius: 0.8rem;
+  margin: 1.5rem 0;
+  position: relative;
+  background-color: #fff;
+}
+.answer.modify{
+  background-color: rgba(0, 0, 0, 0.5);
+  border:0;
+}
+
+.answer p{
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+.answer p.modify{
+  color: #fff;
+}
+
+.answer .sendBtn{
+    font-size: 1rem;
+    padding: 0.5rem;
+    position: absolute;
+    top: 6px;
+    right:5px;
+    cursor: pointer;
+    background-color: #248bf5;
+    /* border:2px solid #248bf5; */
+    border-radius: 50%;
+    color:#fff;
+}
+
+.answer .sendBtn:hover{
+    border:2px solid #248bf5;
+    background-color: #fff;
+    color:#000;
+}
+
+.options{
+    /* padding: 0.5rem 0; */
+    border-radius: 0.8rem;
+}
+
+
+.options input{
+    list-style: none;
+    display: inline-block;
+    padding: 0.5rem 0.8rem; 
+    margin: 0.4rem;
+    border:2px solid #248bf5;
+    color: #000;
+    background-color: #fff; 
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+  
+.options input.clicked{
+    background-color: #248bf5; 
+    color: #fff;
+}
+  
+  
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.movie{
+  opacity: 0.7;
+}
+
+
+
+
+.lastTextBox{
+  position: absolute;
+  top: 150px;
+  left: 100px;
+  font-size: 2rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #fff;
+  line-height: 3rem;
+  width: 40%;
+  height: 100%;
+}
+
+.lastTextBox.hidden{
+  display: none;
+}
+
+
+
+
