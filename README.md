@@ -1,7 +1,7 @@
 # Being_A_Blind
 
 using P5js and Vanilla Javascript
->>Live server running for p5js
+Live server running for p5js
 
 
 https://hellobonjourlucky.github.io/Being_A_Blind/
